@@ -1,0 +1,17 @@
+// Progress Tracker Script
+let currentProgress = 0;
+
+function updateProgress(amount) {
+    currentProgress += amount;
+    if (currentProgress > 100) {
+        currentProgress = 100;
+    }
+    document.getElementById("progress-bar").style.width = currentProgress + "%";
+    document.getElementById("progress-bar").textContent = currentProgress + "%";
+}
+
+function resetProgress() {
+    currentProgress = 0;
+    document.getElementById("progress-bar").style.width = "0%";
+    document.getElementById("progress-bar").textContent = "0%";
+}
