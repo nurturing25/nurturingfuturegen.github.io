@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free educational website for kids aged 2 to 18 with courses in various subjects.">
+    <title>Kid's Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <nav>
+        <img src="logo.png" alt="Kid's Learning Hub" class="logo">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#quizzes">Quizzes</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home">
+    <h1>Welcome to Kid's Learning Hub</h1>
+    <p>Explore fun and educational courses for kids aged 2 to 18.</p>
+</section>
+
+<section id="courses">
+    <h2>Our Courses</h2>
+    <div class="course-list">
+        <div class="course"><h3>Math</h3><button onclick="loadCourse('math')">Start Learning</button></div>
+        <div class="course"><h3>Reading</h3><button onclick="loadCourse('reading')">Start Learning</button></div>
+        <div class="course"><h3>Economy</h3><button onclick="loadCourse('economy')">Start Learning</button></div>
+        <div class="course"><h3>Spanish</h3><button onclick="loadCourse('spanish')">Start Learning</button></div>
+        <div class="course"><h3>Science</h3><button onclick="loadCourse('science')">Start Learning</button></div>
+        <div class="course"><h3>History</h3><button onclick="loadCourse('history')">Start Learning</button></div>
+        <div class="course"><h3>Earth Science</h3><button onclick="loadCourse('earth_science')">Start Learning</button></div>
+        <div class="course"><h3>Computer</h3><button onclick="loadCourse('computer')">Start Learning</button></div>
+        <div class="course"><h3>Art</h3><button onclick="loadCourse('art')">Start Learning</button></div>
+        <div class="course"><h3>French</h3><button onclick="loadCourse('french')">Start Learning</button></div>
+        <div class="course"><h3>Italian</h3><button onclick="loadCourse('italian')">Start Learning</button></div>
+    </div>
+
+    <div id="course-content" class="hidden">
+        <h3 id="course-title"></h3>
+        <div id="course-lessons"></div>
+        <button onclick="goBack()">Back to Courses</button>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Kid's Learning Hub. All rights reserved.</p>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+    <p id="form-message"></p>
+</section>
+
+</footer>
+
+</body>
+</html>
