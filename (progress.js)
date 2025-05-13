@@ -1,37 +1,42 @@
-// Progress Tracker with Local Storage
-let currentProgress = 0;
-
-// Load saved progress (if any)
+// Load saved progress for all courses on page load
 document.addEventListener("DOMContentLoaded", () => {
-    const savedProgress = localStorage.getItem("courseProgress");
-    if (savedProgress) {
-        currentProgress = parseInt(savedProgress);
-        updateProgress(0); // Refresh the progress bar to saved progress
-    }
+    loadAllProgress();
 });
 
-// Function to update progress
-function updateProgress(amount) {
-    currentProgress += amount;
-    if (currentProgress > 100) {
-        currentProgress = 100;
-    }
-    if (currentProgress < 0) {
-        currentProgress = 0;
-    }
-    document.getElementById("progress-bar").style.width = currentProgress + "%";
-    document.getElementById("progress-bar").textContent = currentProgress + "%";
-
-    // Save progress to local storage
-    localStorage.setItem("courseProgress", currentProgress);
+// Function to load all saved progress
+function loadAllProgress() {
+    const courses = document.querySelectorAll(".course");
+    courses.forEach(course => {
+        const courseId = course.id.split("-")[1];
+        const savedProgress = localStorage.getItem("courseProgress-" + courseId);
+        if (savedProgress) {
+            document.getElementById("progress-" + courseId).style.width = savedProgress + "%";
+            document.getElementById("progress-" + courseId).textContent = savedProgress + "%";
+        }
+    });
 }
 
-// Function to reset progress
-function resetProgress() {
-    currentProgress = 0;
-    document.getElementById("progress-bar").style.width = "0%";
-    document.getElementById("progress-bar").textContent = "0%";
+// Function to update progress for a specific course
+function updateProgress(course, amount) {
+    const progressBar = document.getElementById("progress-" + course);
+    let currentProgress = parseInt(progressBar.textContent) || 0;
+    
+    currentProgress += amount;
+    if (currentProgress > 100) currentProgress = 100;
+    if (currentProgress < 0) currentProgress = 0;
+    
+    progressBar.style.width = currentProgress + "%";
+    progressBar.textContent = currentProgress + "%";
+    
+    // Save progress to local storage
+    localStorage.setItem("courseProgress-" + course, currentProgress);
+}
 
+// Function to reset progress for a specific course
+function resetProgress(course) {
+    document.getElementById("progress-" + course).style.width = "0%";
+    document.getElementById("progress-" + course).textContent = "0%";
+    
     // Clear saved progress
-    localStorage.removeItem("courseProgress");
+    localStorage.removeItem("courseProgress-" + course);
 }
