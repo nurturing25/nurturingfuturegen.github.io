@@ -1,0 +1,18 @@
+// Simple Quiz Script
+document.addEventListener("DOMContentLoaded", function() {
+    const quizForm = document.querySelector("#quiz-form");
+    const resultDiv = document.querySelector("#quiz-result");
+
+    quizForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const answers = new FormData(quizForm);
+        let score = 0;
+
+        if (answers.get("q1") === "B") score++;
+        if (answers.get("q2") === "A") score++;
+        if (answers.get("q3") === "C") score++;
+
+        resultDiv.textContent = `You got ${score} out of 3 correct!`;
+        resultDiv.style.display = "block";
+    });
+});
