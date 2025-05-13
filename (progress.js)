@@ -156,3 +156,54 @@ function resetProgress(course) {
         updateProgress("science-course", 100); // Science course complete
     });
 </script>
+
+
+
+<script>
+    let soundEnabled = true;
+
+    // Load user preference on page load
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedPreference = localStorage.getItem("soundEnabled");
+        soundEnabled = savedPreference === null ? true : savedPreference === "true";
+        document.getElementById("soundToggle").checked = soundEnabled;
+
+        updateProgress("math-course", 100);  // Math course complete
+        updateProgress("reading-course", 40); // Reading course at 40% complete
+        updateProgress("science-course", 100); // Science course complete
+    });
+
+    // Listen for toggle change and save preference
+    document.getElementById("soundToggle").addEventListener("change", function() {
+        soundEnabled = this.checked;
+        localStorage.setItem("soundEnabled", soundEnabled);
+    });
+
+    function updateProgress(courseId, progress) {
+        const progressBar = document.querySelector(`#${courseId} .progress-bar`);
+        progressBar.style.setProperty('--progress-width', progress + '%');
+        progressBar.style.width = progress + '%';
+        progressBar.textContent = progress + '%';
+
+        if (progress === 100) {
+            playCompletionSound(courseId);
+        }
+    }
+
+    function playCompletionSound(courseId) {
+        if (!soundEnabled) return;
+
+        const soundMap = {
+            "math-course": "math-sound",
+            "reading-course": "reading-sound",
+            "science-course": "science-sound"
+        };
+
+        const soundId = soundMap[courseId];
+        if (soundId) {
+            const sound = document.getElementById(soundId);
+            sound.currentTime = 0; // Reset sound to start
+            sound.play();
+        }
+    }
+</script>
