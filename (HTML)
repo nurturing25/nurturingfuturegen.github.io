@@ -43,3 +43,15 @@
 <audio id="reading-sound" src="reading-sound.mp3" preload="auto"></audio>
 <audio id="science-sound" src="science-sound.mp3" preload="auto"></audio>
 
+
+<!-- Sound Toggle Button -->
+<div class="sound-toggle">
+    <label for="soundToggle">Sound Effects:</label>
+    <input type="checkbox" id="soundToggle" checked>
+</div>
+
+<!-- Sound Effects -->
+<audio id="math-sound" src="math-sound.mp3" preload="auto"></audio>
+<audio id="reading-sound" src="reading-sound.mp3" preload="auto"></audio>
+<audio id="science-sound" src="science-sound.mp3" preload="auto"></audio>
+
