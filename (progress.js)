@@ -40,3 +40,21 @@ function resetProgress(course) {
     // Clear saved progress
     localStorage.removeItem("courseProgress-" + course);
 }
+
+
+
+
+<script>
+    function updateProgress(courseId, progress) {
+        const progressBar = document.querySelector(`#${courseId} .progress-bar`);
+        progressBar.style.setProperty('--progress-width', progress + '%');
+        progressBar.style.width = progress + '%';
+        progressBar.textContent = progress + '%';
+    }
+
+    // Example: Updating a course's progress
+    document.addEventListener("DOMContentLoaded", () => {
+        updateProgress("math-course", 70);  // Math course at 70% complete
+        updateProgress("reading-course", 40); // Reading course at 40% complete
+    });
+</script>
