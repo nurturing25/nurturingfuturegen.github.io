@@ -1,10 +1,17 @@
-<div class="container">
-    <h1>Your Course Progress</h1>
-    
+<div class="course" id="course-math">
+    <h3>Math Course</h3>
     <div class="progress-container">
-        <div id="progress-bar" class="progress-bar" style="width: 0%;">0%</div>
+        <div id="progress-math" class="progress-bar">0%</div>
     </div>
+    <button onclick="updateProgress('math', 10)">Complete Lesson</button>
+    <button onclick="resetProgress('math')">Reset Progress</button>
+</div>
 
-    <button onclick="updateProgress(10)">Complete Lesson</button>
-    <button onclick="resetProgress()">Reset Progress</button>
+<div class="course" id="course-science">
+    <h3>Science Course</h3>
+    <div class="progress-container">
+        <div id="progress-science" class="progress-bar">0%</div>
+    </div>
+    <button onclick="updateProgress('science', 10)">Complete Lesson</button>
+    <button onclick="resetProgress('science')">Reset Progress</button>
 </div>
