@@ -1,17 +1,37 @@
-// Progress Tracker Script
+// Progress Tracker with Local Storage
 let currentProgress = 0;
 
+// Load saved progress (if any)
+document.addEventListener("DOMContentLoaded", () => {
+    const savedProgress = localStorage.getItem("courseProgress");
+    if (savedProgress) {
+        currentProgress = parseInt(savedProgress);
+        updateProgress(0); // Refresh the progress bar to saved progress
+    }
+});
+
+// Function to update progress
 function updateProgress(amount) {
     currentProgress += amount;
     if (currentProgress > 100) {
         currentProgress = 100;
     }
+    if (currentProgress < 0) {
+        currentProgress = 0;
+    }
     document.getElementById("progress-bar").style.width = currentProgress + "%";
     document.getElementById("progress-bar").textContent = currentProgress + "%";
+
+    // Save progress to local storage
+    localStorage.setItem("courseProgress", currentProgress);
 }
 
+// Function to reset progress
 function resetProgress() {
     currentProgress = 0;
     document.getElementById("progress-bar").style.width = "0%";
     document.getElementById("progress-bar").textContent = "0%";
+
+    // Clear saved progress
+    localStorage.removeItem("courseProgress");
 }
