@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Your Course Progress</h1>
+    
+    <div class="progress-container">
+        <div id="progress-bar" class="progress-bar" style="width: 0%;">0%</div>
+    </div>
+
+    <button onclick="updateProgress(10)">Complete Lesson</button>
+    <button onclick="resetProgress()">Reset Progress</button>
+</div>
