@@ -36,3 +36,10 @@
 
 <!-- Sound Effect -->
 <audio id="cheer-sound" src="cheerful-sound.mp3" preload="auto"></audio>
+
+
+<!-- Sound Effects -->
+<audio id="math-sound" src="math-sound.mp3" preload="auto"></audio>
+<audio id="reading-sound" src="reading-sound.mp3" preload="auto"></audio>
+<audio id="science-sound" src="science-sound.mp3" preload="auto"></audio>
+
