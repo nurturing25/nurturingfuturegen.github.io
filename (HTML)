@@ -33,3 +33,6 @@
     </div>
     <button onclick="updateProgress('reading-course', 100)">Complete</button>
 </div>
+
+<!-- Sound Effect -->
+<audio id="cheer-sound" src="cheerful-sound.mp3" preload="auto"></audio>
