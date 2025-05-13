@@ -58,3 +58,23 @@ function resetProgress(course) {
         updateProgress("reading-course", 40); // Reading course at 40% complete
     });
 </script>
+
+
+<script>
+    function updateProgress(courseId, progress) {
+        const progressBar = document.querySelector(`#${courseId} .progress-bar`);
+        progressBar.style.setProperty('--progress-width', progress + '%');
+        progressBar.style.width = progress + '%';
+        progressBar.textContent = progress + '%';
+
+        if (progress === 100) {
+            document.getElementById("cheer-sound").play();
+        }
+    }
+
+    // Example: Updating a course's progress
+    document.addEventListener("DOMContentLoaded", () => {
+        updateProgress("math-course", 70);  // Math course at 70% complete
+        updateProgress("reading-course", 40); // Reading course at 40% complete
+    });
+</script>
