@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Explore Our Courses</h1>
+    <p>We offer a wide range of courses to help you learn and grow.</p>
+    
+    <div>
+        <img src="https://via.placeholder.com/100?text=Math" class="animated-icon" alt="Math Icon">
+        <img src="https://via.placeholder.com/100?text=Science" class="animated-icon" alt="Science Icon">
+        <img src="https://via.placeholder.com/100?text=Art" class="animated-icon" alt="Art Icon">
+    </div>
+</div>
