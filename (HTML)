@@ -55,3 +55,29 @@
 <audio id="reading-sound" src="reading-sound.mp3" preload="auto"></audio>
 <audio id="science-sound" src="science-sound.mp3" preload="auto"></audio>
 
+
+<!-- Sound Toggle -->
+<label for="soundToggle">Sound</label>
+<input type="checkbox" id="soundToggle" checked>
+
+<!-- Audio Files (You can replace these with your own) -->
+<audio id="math-sound" src="math-completion-sound.mp3"></audio>
+<audio id="reading-sound" src="reading-completion-sound.mp3"></audio>
+<audio id="science-sound" src="science-completion-sound.mp3"></audio>
+
+<!-- Course Progress Display -->
+<div id="course-progress">
+    <div id="math-course" class="course">
+        <h3>Math Course</h3>
+        <div class="progress-bar" style="--progress-width: 0%;">0%</div>
+    </div>
+    <div id="reading-course" class="course">
+        <h3>Reading Course</h3>
+        <div class="progress-bar" style="--progress-width: 0%;">0%</div>
+    </div>
+    <div id="science-course" class="course">
+        <h3>Science Course</h3>
+        <div class="progress-bar" style="--progress-width: 0%;">0%</div>
+    </div>
+</div>
+
