@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz - Nurturing Future Generation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="quiz.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Interactive Quiz</h1>
+        <p>Test your knowledge!</p>
+
+        <form id="quiz-form">
+            <h3>1. What is 5 + 3?</h3>
+            <label><input type="radio" name="q1" value="A"> 6</label><br>
+            <label><input type="radio" name="q1" value="B"> 8</label><br>
+            <label><input type="radio" name="q1" value="C"> 9</label><br>
+
+            <h3>2. What planet is known as the Red Planet?</h3>
+            <label><input type="radio" name="q2" value="A"> Mars</label><br>
+            <label><input type="radio" name="q2" value="B"> Jupiter</label><br>
+            <label><input type="radio" name="q2" value="C"> Venus</label><br>
+
+            <h3>3. What is the largest ocean on Earth?</h3>
+            <label><input type="radio" name="q3" value="A"> Atlantic</label><br>
+            <label><input type="radio" name="q3" value="B"> Indian</label><br>
+            <label><input type="radio" name="q3" value="C"> Pacific</label><br>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+
+        <div id="quiz-result" style="display: none; margin-top: 20px;"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nurturing Future Generation. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
