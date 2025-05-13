@@ -76,4 +76,30 @@ button {
 button:hover {
     background: #1a50a8;
 }
+
+
+/* Animated Progress Bar */
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    transition: width 1s ease-out;
+    border-radius: 15px;
+    animation: fillProgress 1s forwards;
+}
+
+/* Keyframes for Animation */
+@keyframes fillProgress {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--progress-width, 0%);
+    }
+}
+
 }
