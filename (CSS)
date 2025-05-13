@@ -110,3 +110,46 @@ button:hover {
         font-size: 16px;
     }
 </style>
+
+
+
+<style>
+    #course-progress {
+        margin: 20px 0;
+    }
+
+    .course {
+        margin-bottom: 15px;
+    }
+
+    .progress-bar {
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        height: 25px;
+        width: 100%;
+    }
+
+    .progress-bar::before {
+        content: '';
+        display: block;
+        height: 100%;
+        background-color: #4caf50;
+        width: var(--progress-width, 0%);
+        transition: width 0.5s;
+    }
+
+    .progress-bar {
+        text-align: center;
+        line-height: 25px;
+        font-weight: bold;
+        color: #fff;
+        position: absolute;
+        width: 100%;
+    }
+
+    #soundToggle {
+        margin-top: 10px;
+    }
+</style>
